@@ -22,3 +22,67 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# テーブル設計
+
+## users テーブル
+
+| Column    | Type   | Options     |
+| --------- | ------ | ----------- |
+| nickname  | string | null: false |
+| email     | string | null: false |
+| password1 | string | null: false |
+| password2 | string | null: false |
+| name1     | string | null: false |
+| name2     | string | null: false |
+| birthday  | string | null: false |
+
+### Association
+
+- has_many :items
+- has_many :buyers
+
+
+## items テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| name      | string     | null: false                    |
+| category  | string     | null: false                    |
+| price     | string     | null: false                    |
+| user      | references | null: false, foreign_key: true |
+| image     | string     | null: false                    |
+| condition | string     | null: false                    |
+
+### Association
+
+- belongs_to :users
+- has_one :buyers
+
+
+## buyers テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
+| charge | string     | null: false                    |
+### Association
+
+- belongs_to :users
+- belongs_to :items
+- has_one :address
+
+## address テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| buyer  | references | null: false, foreign_key: true |
+| area   | string     | null: false                    |
+| day    | string     | null: false                    |
+
+
+### Association
+
+- belongs_to :user
+
