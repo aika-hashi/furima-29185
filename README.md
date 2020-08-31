@@ -27,15 +27,17 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column    | Type   | Options     |
-| --------- | ------ | ----------- |
-| nickname  | string | null: false |
-| email     | string | null: false |
-| password1 | string | null: false |
-| password2 | string | null: false |
-| name1     | string | null: false |
-| name2     | string | null: false |
-| birthday  | string | null: false |
+| Column      | Type   | Options     |
+| ----------- | ------ | ----------- |
+| nickname    | string | null: false |
+| email       | string | null: false |
+| password1   | string | null: false |
+| password2   | string | null: false |
+| familyname1 | string | null: false |
+| firstname1  | string | null: false |
+| familyname2 | string | null: false |
+| firstname2  | string | null: false |
+| date        | string | null: false |
 
 ### Association
 
@@ -53,6 +55,9 @@ Things you may want to cover:
 | user      | references | null: false, foreign_key: true |
 | image     | string     | null: false                    |
 | condition | string     | null: false                    |
+| area      | string     | null: false                    |
+| day       | string     | null: false                    |
+| charge    | string     | null: false                    |
 
 ### Association
 
@@ -75,12 +80,18 @@ Things you may want to cover:
 
 ## address テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| buyer  | references | null: false, foreign_key: true |
-| area   | string     | null: false                    |
-| day    | string     | null: false                    |
-
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| buyer      | references | null: false, foreign_key: true |
+| cardnum    | string     | null: false                    |
+| date       | string     | null: false                    |
+| code       | string     | null: false                    |
+| addressnum | string     | null: false                    |
+| prefecture | string     | null: false                    |
+| city       | string     | null: false                    |
+| housenum   | string     | null: false                    |
+| building   | string     | null: false                    |
+| phonenum   | string     | null: false                    |
 
 ### Association
 
