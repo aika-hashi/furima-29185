@@ -37,7 +37,7 @@ Things you may want to cover:
 | firstname1  | string | null: false |
 | familyname2 | string | null: false |
 | firstname2  | string | null: false |
-| date        | string | null: false |
+| date        | date   | null: false |
 
 ### Association
 
@@ -47,22 +47,22 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| name      | string     | null: false                    |
-| category  | string     | null: false                    |
-| price     | string     | null: false                    |
-| user      | references | null: false, foreign_key: true |
-| image     | string     | null: false                    |
-| condition | string     | null: false                    |
-| area      | string     | null: false                    |
-| day       | string     | null: false                    |
-| charge    | string     | null: false                    |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| name         | string     | null: false                    |
+| category_id  | integer    | null: false                    |
+| price        | string     | null: false                    |
+| user         | references | null: false, foreign_key: true |
+| image        | string     | null: false                    |
+| condition_id | integer    | null: false                    |
+| area_id      | integer    | null: false                    |
+| day_id       | integer    | null: false                    |
+| charge_id    | integer    | null: false                    |
 
 ### Association
 
-- belongs_to :users
-- has_one :buyers
+- belongs_to :user
+- has_one :buyer
 
 
 ## buyers テーブル
@@ -71,11 +71,11 @@ Things you may want to cover:
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
 | item   | references | null: false, foreign_key: true |
-| charge | string     | null: false                    |
+
 ### Association
 
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :item
 - has_one :address
 
 ## address テーブル
@@ -83,9 +83,6 @@ Things you may want to cover:
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
 | buyer      | references | null: false, foreign_key: true |
-| cardnum    | string     | null: false                    |
-| date       | string     | null: false                    |
-| code       | string     | null: false                    |
 | addressnum | string     | null: false                    |
 | prefecture | string     | null: false                    |
 | city       | string     | null: false                    |
