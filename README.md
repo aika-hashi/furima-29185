@@ -27,17 +27,17 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column      | Type   | Options     |
-| ----------- | ------ | ----------- |
-| nickname    | string | null: false |
-| email       | string | null: false |
-| password1   | string | null: false |
-| password2   | string | null: false |
-| familyname1 | string | null: false |
-| firstname1  | string | null: false |
-| familyname2 | string | null: false |
-| firstname2  | string | null: false |
-| date        | date   | null: false |
+| Column          | Type   | Options     |
+| --------------- | ------ | ----------- |
+| nickname        | string | null: false |
+| email           | string | null: false |
+| password1       | string | null: false |
+| password2       | string | null: false |
+| firstname       | string | null: false |
+| firstname_kana  | string | null: false |
+| familyname      | string | null: false |
+| familyname_kana | string | null: false |
+| date            | date   | null: false |
 
 ### Association
 
@@ -80,17 +80,17 @@ Things you may want to cover:
 
 ## address テーブル
 
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| buyer      | references | null: false, foreign_key: true |
-| addressnum | string     | null: false                    |
-| prefecture | string     | null: false                    |
-| city       | string     | null: false                    |
-| housenum   | string     | null: false                    |
-| building   | string     | null: false                    |
-| phonenum   | string     | null: false                    |
+| Column        | Type       | Options                        |
+| ----------    | ---------- | ------------------------------ |
+| buyer         | references | null: false, foreign_key: true |
+| addressnum    | string     | null: false                    |
+| prefecture_id | integer     | null: false                   |
+| city          | string     | null: false                    |
+| housenum      | string     | null: false                    |
+| building      | string     | null: false                    |
+| phonenum      | string     | null: false                    |
 
 ### Association
 
-- belongs_to :user
+- belongs_to :buyer
 
