@@ -42,7 +42,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
-- has_many :buyers
+- has_many :item_buyers
 
 
 ## items テーブル
@@ -53,7 +53,6 @@ Things you may want to cover:
 | category_id  | integer    | null: false                    |
 | price        | string     | null: false                    |
 | user         | references | null: false, foreign_key: true |
-| image        | string     | null: false                    |
 | condition_id | integer    | null: false                    |
 | area_id      | integer    | null: false                    |
 | day_id       | integer    | null: false                    |
@@ -62,10 +61,16 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- has_one :buyer
+- has_one :item_buyer
+- belongs_to_active_hash :category
+- belongs_to_active_hash :condition
+- belongs_to_active_hash :area
+- belongs_to_active_hash :day
+- belongs_to_active_hash :charge
 
 
-## buyers テーブル
+
+## item_buyers テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -84,7 +89,7 @@ Things you may want to cover:
 | ----------    | ---------- | ------------------------------ |
 | buyer         | references | null: false, foreign_key: true |
 | addressnum    | string     | null: false                    |
-| prefecture_id | integer     | null: false                   |
+| prefecture_id | integer    | null: false                   |
 | city          | string     | null: false                    |
 | housenum      | string     | null: false                    |
 | building      | string     | null: false                    |
@@ -92,5 +97,6 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :buyer
+- belongs_to :item_buyer
+- belongs_to_active_hash :prefecture_id 
 
