@@ -9,21 +9,38 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def new
   #   super
   # end
-  def new
-    @user = User.new
-    end
+  #def new
+    #@user = User.new
+    #end
 
   # POST /resource
   # def create
   #   super
   # end
-  def create
-    @user = User.new(sign_up_params)
-    unless @user.valid?
-      flash.now[:alert] = @user.errors.full_messages
-      render :new and return
-    end
-  end
+  #def create
+  
+   # @user = User.new(sign_up_params)
+    #if @user.valid?
+   #   flash.now[:alert] = @user.errors.full_messages
+    #  render :new and return
+    # if @user.save
+      
+    #  redirect_to root_path
+   # else
+      
+    #  render :new
+      
+       
+    #end
+  #  render :new
+  #  end
+   # render :new
+  #end
+
+  #private
+  #def sign_up_params
+   # params.require(:user).permit(:nickname, :email,:password,:password_confirmation,:firstname, :familyname, :firstname_kana, :familyname_kana, :date,)
+ # end
 
   # GET /resource/edit
   # def edit

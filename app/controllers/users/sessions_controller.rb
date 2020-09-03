@@ -7,6 +7,9 @@ class Users::SessionsController < Devise::SessionsController
   # def new
   #   super
   # end
+def 
+
+end
 
   # POST /resource/sign_in
   # def create
