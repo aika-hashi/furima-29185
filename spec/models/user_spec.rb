@@ -73,4 +73,30 @@ describe 'ユーザー新規登録' do
     end
   end
 end
+
+
+
+
+
+
+describe 'ログイン' do
+  context 'ログインがうまくいくとき' do
+    it "emailとpasswordが存在すればログインできる" do
+      expect(@user).to be_valid
+    end
+  end
+   
+  context 'ログインがうまくいかないとき' do
+      it "emailが空ではログインできない" do
+        @user.email = ""
+    @user.valid?
+    expect(@user.errors.full_messages).to include("Email can't be blank")
+      end
+      it "passwordが空ではログインできない" do
+        @user.password = ""
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password can't be blank")
+      end
+  end
+end
 end
