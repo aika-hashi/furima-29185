@@ -45,6 +45,11 @@ describe 'ユーザー新規登録' do
       another_user.valid?
       expect(another_user.errors.full_messages).to include("Email has already been taken")
     end
+    it "emailに＠を含まなければ登録できない" do
+      @user.email = "aaaaa"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Email is invalid")
+    end
     it "passwordが空では登録できない" do
       @user.password = ""
       @user.valid?
@@ -70,6 +75,17 @@ describe 'ユーザー新規登録' do
       @user.password_confirmation = ""
   @user.valid?
   expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+    end
+    it "firstname_kanaが全角カタカナ以外だと登録できない
+    登録できない" do
+      @user.firstname_kana = "陸たろう"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Firstname kana is invalid. Input full-width characters.")
+    end
+    it "familyname_kanaが全角カタカナ以外だと登録できない" do
+      @user.familyname_kana = "山だ"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Familyname kana is invalid. Input full-width characters.")
     end
   end
 end
