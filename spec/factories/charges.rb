@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :genre do
+  factory :charge do
     
   end
 end
