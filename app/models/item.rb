@@ -6,6 +6,7 @@ class Item < ApplicationRecord
    belongs_to_active_hash :condition
    belongs_to_active_hash :area
    belongs_to_active_hash :day
+   belongs_to_active_hash :charge
 
    validates :title, :text, :category, :condition, :charge, :area, :day, presence: true
 
@@ -16,8 +17,8 @@ class Item < ApplicationRecord
    validates :day_id, numericality: { other_than: 1 }
   
    with_options presence: true do
-    validates :price, format: { with: /^[0-9]+$/, message: "is invalid. Input full-width characters."}
-    validates :price, format: { with: between:300,9999999 , message: "is invalid. Input full-width characters."}
+    validates :price, format: { with: /\A[0-9]+\z/, message: "is invalid. Input full-width characters."}
+   # validates :price, format: { with: between:300,9999999 , message: "is invalid. Input full-width characters."}
    end
 
 end
