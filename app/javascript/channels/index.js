@@ -1,5 +1,25 @@
-// Load all the channels within this directory and all subdirectories.
-// Channel files must be named *_channel.js.
-
-const channels = require.context('.', true, /_channel\.js$/)
-channels.keys().forEach(channels)
+function price(){
+  // 画面が読み込まれた時に動くように定義する
+   const item_price = document.getElementById("item-price");
+   const add_tax = document.getElementById("add-tax-price");//販売手数料
+   const profit = document.getElementById("profit");//販売利益
+   // 価格入力時に手数料、利益計算
+     item_price.addEventListener('keyup', () => {
+         const value = item_price.value; //value（入力の金額を定義）
+         
+       if (value >= 300 && value <= 9999999){
+         let fee = value * 0.1
+         let gains = value - fee
+         add_tax.textContent = fee;
+         profit.textContent = gains;
+     } else {
+       let fee = '-';
+       let gains = '-';
+       add_tax.textContent = fee;
+       profit.textContent = gains;
+     }
+   });
+  
+  }
+  window.addEventListener('load', price);
+  

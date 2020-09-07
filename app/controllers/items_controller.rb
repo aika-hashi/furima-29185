@@ -18,12 +18,12 @@ class ItemsController < ApplicationController
     end
   end
 
-  #def show
-    #item = Item.find(params[:id])
-    #@image = item.image
-    #@title = item.title
-   # @price = item.price
-  #end
+  def show
+    item = Item.find(params[:id])
+    @image = item.image
+    @title = item.title
+   @price = item.price
+  end
 
   private
 
