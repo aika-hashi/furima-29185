@@ -20,9 +20,6 @@ class ItemsController < ApplicationController
 
   def show
     item = Item.find(params[:id])
-    @image = item.image
-    @title = item.title
-   @price = item.price
   end
 
   private
