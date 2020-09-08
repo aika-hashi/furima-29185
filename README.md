@@ -90,7 +90,7 @@ Things you may want to cover:
 | ----------    | ---------- | ------------------------------ |
 | order         | references | null: false, foreign_key: true |
 | addressnum    | string     | null: false                    |
-| prefecture_id | integer    | null: false                    |
+| area_id       | integer    | null: false                    |
 | city          | string     | null: false                    |
 | housenum      | string     | null: false                    |
 | building      | string     | null: false                    |
@@ -99,5 +99,5 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :order
-- belongs_to_active_hash :prefecture_id 
+- belongs_to_active_hash :area_id 
 
