@@ -42,7 +42,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
-- has_many :item_buyers
+- has_many :orders
 
 
 ## items テーブル
@@ -61,7 +61,7 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- has_one :item_buyer
+- has_one :order
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :area
@@ -70,7 +70,7 @@ Things you may want to cover:
 
 
 
-## item_buyers テーブル
+## orders テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -87,7 +87,7 @@ Things you may want to cover:
 
 | Column        | Type       | Options                        |
 | ----------    | ---------- | ------------------------------ |
-| buyer         | references | null: false, foreign_key: true |
+| order         | references | null: false, foreign_key: true |
 | addressnum    | string     | null: false                    |
 | prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
@@ -97,6 +97,6 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :item_buyer
+- belongs_to :order
 - belongs_to_active_hash :prefecture_id 
 
