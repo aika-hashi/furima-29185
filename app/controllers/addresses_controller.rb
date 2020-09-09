@@ -1,4 +1,4 @@
-class AddressController < ApplicationController
+class AddressesController < ApplicationController
   def new
   
   end
