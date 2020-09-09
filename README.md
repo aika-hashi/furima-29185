@@ -84,7 +84,7 @@ Things you may want to cover:
 - has_one :address
 
 
-## address テーブル
+## addresses テーブル
 
 | Column        | Type       | Options                        |
 | ----------    | ---------- | ------------------------------ |
