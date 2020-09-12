@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     # items = item.save
     @item = Item.find(params[:item_id])
  
-    if @item.user_id == current_user.id || @order.save != nil
+    if @item.user_id == current_user.id || @item.order !=nil
    redirect_to root_path
    end
 
