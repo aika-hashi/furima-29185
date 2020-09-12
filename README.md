@@ -67,7 +67,7 @@ Things you may want to cover:
 - belongs_to_active_hash :area
 - belongs_to_active_hash :day
 - belongs_to_active_hash :charge
-
+- has_one_attached :image
 
 
 ## orders テーブル
@@ -99,5 +99,5 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :order
-- belongs_to_active_hash :area_id 
+- belongs_to_active_hash :area
 
