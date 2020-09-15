@@ -5,8 +5,8 @@ class OrderAddress
   
   with_options presence: true do
     validates :area_id,:city ,:housenum  ,:phonenum,:token, presence: true
-    validates :addressnum, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Input full-width characters."}
-    validates :phonenum, format: { with: /\A\d{10,11}$\z/, message: "is invalid. Input full-width characters."}
+    ADDRESSNUM_REGEX = validates :addressnum, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Input full-width characters."}
+    PHONENUM_REGEX = validates :phonenum, format: { with: /\A\d{10,11}$\z/, message: "is invalid. Input full-width characters."}
     validates :area_id, numericality: { other_than: 1 }
   end
   
