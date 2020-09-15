@@ -11,8 +11,5 @@ Rails.application.routes.draw do
   resources :items do
    resources :orders 
   end
-  # /items/2/orders
-  # /items/4/orders/5
-  # /items/4/orders/4/edit
-  # /items/4/orders/new
+ 
 end
