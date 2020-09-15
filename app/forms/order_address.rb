@@ -4,7 +4,7 @@ class OrderAddress
   attr_accessor  :addressnum ,:area_id,:city ,:housenum  ,:phonenum ,:building,:item_id,:user_id,:token
   
   with_options presence: true do
-    validates :addressnum ,:area_id,:city ,:housenum  ,:phonenum,:token, presence: true
+    validates :area_id,:city ,:housenum  ,:phonenum,:token, presence: true
     validates :addressnum, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Input full-width characters."}
     validates :phonenum, format: { with: /\A\d{10,11}$\z/, message: "is invalid. Input full-width characters."}
     validates :area_id, numericality: { other_than: 1 }

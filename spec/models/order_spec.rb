@@ -9,18 +9,6 @@ describe OrderAddress do
       it "addressnum ,area,city ,housenum,phonenum ,tokenが存在すれば登録できる" do
         expect(@order).to be_valid
       end
-      it "areaがid:1以外であれば登録できる" do
-        @order.area_id = 2
-        expect(@order).to be_valid
-      end
-      it "addressnumにハイフンがあれば登録できる" do
-        @order.addressnum = "123-4567"
-        expect(@order).to be_valid
-      end
-      it "phonenumが11桁以内であれば登録できる" do
-        @order.phonenum = 12345678910
-        expect(@order).to be_valid
-      end
     end
 
     context '商品購入がうまくいかないとき' do
