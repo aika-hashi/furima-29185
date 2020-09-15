@@ -67,7 +67,7 @@ Things you may want to cover:
 - belongs_to_active_hash :area
 - belongs_to_active_hash :day
 - belongs_to_active_hash :charge
-
+- has_one_attached :image
 
 
 ## orders テーブル
@@ -89,7 +89,7 @@ Things you may want to cover:
 | Column        | Type       | Options                        |
 | ----------    | ---------- | ------------------------------ |
 | order         | references | null: false, foreign_key: true |
-| addressnum    | string     | null: false                    |
+| postalnum    | string     | null: false                    |
 | area_id       | integer    | null: false                    |
 | city          | string     | null: false                    |
 | housenum      | string     | null: false                    |
@@ -99,5 +99,5 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :order
-- belongs_to_active_hash :area_id 
+- belongs_to_active_hash :area
 
