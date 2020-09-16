@@ -96,7 +96,7 @@ Things you may want to cover:
 | building      | string     | null: false                    |
 | phonenum      | string     | null: false                    |
 
-### Association
+### Association   
 
 - belongs_to :order
 - belongs_to_active_hash :area
