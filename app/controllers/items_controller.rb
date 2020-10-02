@@ -5,7 +5,14 @@ class ItemsController < ApplicationController
   def index
    @items = Item.all.order("created_at DESC")
    
+   @search = Item.ransack(params[:q])
+   @item = @search.result(distinct: true).order("created_at DESC")
 
+
+   
+   
+
+   
   end
 
   def new
