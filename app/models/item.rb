@@ -7,11 +7,11 @@ class Item < ApplicationRecord
    belongs_to_active_hash :area
    belongs_to_active_hash :day
    belongs_to_active_hash :charge
-   has_one_attached :image
+   has_many_attached :images
 
    
    with_options presence: true do
-    validates :image,:title, :text, :category, :condition, :charge, :area, :day, presence: true
+    validates :images,:title, :text, :category, :condition, :charge, :area, :day, presence: true
     validates :price, format: { with: /\A[0-9]+\z/, message: "is invalid. Input full-width characters."}
     validates :price,
     numericality: {
