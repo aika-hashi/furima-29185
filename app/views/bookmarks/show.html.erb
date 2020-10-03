@@ -1,12 +1,6 @@
 <table>
   <caption>お気に入り一覧</caption>
-  <thead>
-    <tr>
-      <th>投稿者名</th>
-      <th>タイトル</th>
-      <th>本文</th>
-    </tr>
-  </thead>
+  <%=link_to 'もどる', root_path, class:"btn" %>
   <tbody>
     <% @bookmark.each do |bookmark| %>
       <tr>
