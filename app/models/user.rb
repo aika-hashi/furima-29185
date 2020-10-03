@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
          has_many :items
          has_many :orders
+         has_many :bookmarks, dependent: :destroy
+
 
          validates :nickname,:email,:password,:password_confirmation,:firstname, :familyname, :firstname_kana, :familyname_kana, :date,presence: true
 

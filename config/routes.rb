@@ -11,5 +11,10 @@ Rails.application.routes.draw do
   resources :items do
    resources :orders 
   end
+
+  resources :items do
+    resource :bookmarks, only: [:create, :destroy,:show]
+  end
+
  
 end

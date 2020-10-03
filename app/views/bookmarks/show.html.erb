@@ -1,0 +1,30 @@
+<table>
+  <caption>お気に入り一覧</caption>
+  <thead>
+    <tr>
+      <th>投稿者名</th>
+      <th>タイトル</th>
+      <th>本文</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookmark.each do |bookmark| %>
+      <tr>
+        <td><%= bookmark.item.user.nickname %></td>
+        <td>
+          <%= link_to item_path(bookmark.item) do %>
+            <%= bookmark.item.title %>
+          <% end %>
+        </td>
+         <td>
+          <%= link_to item_path(bookmark.item) do %>
+            <%=image_tag bookmark.item.image %>
+          <% end %>
+        </td>
+    
+      </tr>
+    <% end %>
+    
+  </tbody>
+</table>
+<%=link_to 'もどる', root_path, class:"btn" %>
