@@ -126,23 +126,24 @@
 <%# 宿泊施設・観光スポット検索欄%>
 <span class= 'search-btn'>検索</span>
 <%= search_form_for @search do |f| %>
+<div>
   <%= f.label :title_cont, '商品名' %>
   <%= f.search_field :title_cont %>
+</div>
 
 
-
-
+<div>
 <%=f.label :category_id_eq,'カテゴリー'%>
 <%= f.collection_select :category_id_eq, Category.all,:id,:name, include_blank: '指定なし' %>
-  
+ </div> 
 
-  
-  <%= f.label :price %>
+  <div>
+  <%= f.label :price_lteq,'料金' %>
   <%= f.radio_button :price_lteq, '' %>指定なし
   <%= f.radio_button :price_lteq, '5000' %>5000円以下
   <%= f.radio_button :price_lteq, '7500' %>7500円以下
   <%= f.radio_button :price_lteq, '10000' %>10000円以下
-
+</div>
 <%= f.submit '検索' %>
 
 <% end %>

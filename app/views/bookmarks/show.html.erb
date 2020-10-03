@@ -1,5 +1,7 @@
 <table>
-  <caption>お気に入り一覧</caption>
+
+  <div>お気に入り一覧</div>
+  
   <%=link_to 'もどる', root_path, class:"btn" %>
   
 
@@ -8,10 +10,10 @@
     <% if bookmark.user_id == current_user.id%>
     <tbody>
       <tr>
-        <td><%= bookmark.item.user.nickname %></td>
+        <td>出品者<%= bookmark.item.user.nickname %></td>
         <td>
           <%= link_to item_path(bookmark.item) do %>
-            <%= bookmark.item.title %>
+            商品名<%= bookmark.item.title %>
           <% end %>
         </td>
          <td>
