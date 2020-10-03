@@ -8,6 +8,12 @@ class Item < ApplicationRecord
    belongs_to_active_hash :day
    belongs_to_active_hash :charge
    has_one_attached :image
+   has_many :bookmarks, dependent: :destroy
+
+  def bookmarked_by?(user)
+    bookmarks.where(user_id: user).exists?
+  end
+
 
    
    with_options presence: true do
