@@ -4,21 +4,26 @@
   
   <%=link_to 'もどる', root_path, class:"btn" %>
   
-
+<div class='item-img-content'>
   
     <% @bookmark.each do |bookmark| %>
     <% if bookmark.user_id == current_user.id%>
     <tbody>
       <tr>
-        <td>出品者<%= bookmark.item.user.nickname %></td>
+      <h3 class='item-name'>
+        <td>出品者:<%= bookmark.item.user.nickname %></td>
+         </h3>
         <td>
+        <div class='item-info'>
+        <div class='item-name'>
           <%= link_to item_path(bookmark.item) do %>
-            商品名<%= bookmark.item.title %>
+            商品名:<%= bookmark.item.title %>
+            </div>
           <% end %>
         </td>
          <td>
           <%= link_to item_path(bookmark.item) do %>
-            <%=image_tag bookmark.item.image %>
+            <%=image_tag bookmark.item.image, class: "item-img" %>
           <% end %>
         </td>
     
