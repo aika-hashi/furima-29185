@@ -1,8 +1,12 @@
 <table>
   <caption>お気に入り一覧</caption>
   <%=link_to 'もどる', root_path, class:"btn" %>
-  <tbody>
+  
+
+  
     <% @bookmark.each do |bookmark| %>
+    <% if bookmark.user_id == current_user.id%>
+    <tbody>
       <tr>
         <td><%= bookmark.item.user.nickname %></td>
         <td>
@@ -17,8 +21,7 @@
         </td>
     
       </tr>
+      </tbody>
     <% end %>
-    
-  </tbody>
+  <% end %>
 </table>
-<%=link_to 'もどる', root_path, class:"btn" %>
