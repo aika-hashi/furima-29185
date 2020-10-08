@@ -21,7 +21,7 @@
        <li><%= link_to current_user.nickname, "#", class: "user-nickname"  %></li>
        <li><%= link_to 'ログアウト',destroy_user_session_path , method: :delete, class: "logout"  %></li>
        
-       <li><%= link_to 'お気に入り一覧', item_bookmarks_path(current_user.id), class: "hotel_bookmark" %></li>
+       <li><%= link_to 'お気に入り一覧', item_bookmarks_path(current_user.id), class: "bookmark" %></li>
        
      
      <% else %>

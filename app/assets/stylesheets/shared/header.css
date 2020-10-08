@@ -91,6 +91,10 @@
   color: #333333;
 }
 
+
+.bookmark{
+  margin-left: 20px;
+}
 .login {
   text-decoration: none;
   line-height: 32px;
